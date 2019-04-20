@@ -1,157 +1,179 @@
 import statistics as stats
+#Promedio temperatura cada departamento
+def prom_temperature(temperature_department_list):
+    temperature_sum=0
+    temperature_quantity=len(temperature_department_list)
 
-#el promedio de la temperatura de cada departamento
-def prom_temperature(temperature_departament_list):
+    for prom in temperature_department_list:
+        temperature_sum +=prom
 
-    temperature_sum = 0
-    temperature_quantity = len(temperature_departament_list)
+        final_prom=temperature_sum/temperature_quantity
 
-    for prom in temperature_departament_list:
-        temperature_sum += prom
+        return final_prom
 
-    final_prom = temperature_sum / temperature_quantity
-
-    return final_prom
-
-#el mes mas caliente de cada departamento
-def high_temperature(temperature_departament_list):
-    high_temperature=temperature_departament_list[0]
+#Mes mas caliente de cada departamento
+def high_temperature(temperature_department_list):
+    high_temperature=temperature_department_list[0]
     month=[]
 
-    for temperature in temperature_departament_list:
-        if temperature>high_temperature:
-            high_temperature=temperature
+    for temperature in temperature_department_list:
+        if temperature>high_temperature
 
-            position=temperature_departament_list.index(high_temperature)
-            if position==0:
-                month.append("january")
+        position=temperature_department_list.index(high_temperature)
+        if position==0:
+            month.append("january")
+        else:
+            if position==1:
+                month.append("february")
             else:
-                if position==1:
-                    month.append("february")
+                if position==2:
+                    month.append("march")
                 else:
-                    if position==2:
-                        month.append("march")
+                    if position==3:
+                        month.append("april")
                     else:
-                        if position==3:
-                            month.append("april")
+                        if position==4:
+                            month.append("may")
                         else:
-                            if position ==4:
-                                month.append("may")
+                            if position==5:
+                                month.append("june")
                             else:
-                                if position ==5:
-                                    month.append("june")
+                                if position==6:
+                                    month.append("july")
                                 else:
-                                    if position ==6:
-                                        month.append("july")
+                                    if position==7:
+                                        month.append("august")
                                     else:
-                                        if position ==7:
-                                            month.append("august")
+                                        if position==8:
+                                            month.append("september")
                                         else:
-                                            if position ==8:
-                                                month.append("september")
+                                            if position==9:
+                                                month.append("october")
                                             else:
-                                                if position ==9:
-                                                    month.append("october")
+                                                if position==10:
+                                                    month.append("november")
                                                 else:
-                                                    if position ==10:
-                                                        month.append("november")
-                                                    else:
-                                                        if position ==11:
-                                                            month.append("december")
+                                                    if position==11:
+                                                        month.append("december")
 return month
 
+#mes mas caliente de los departamentos
+def hot_prom(temperature_department_list):
+    hot_prom=temperature_department_list[0]
 
-#meses mas calientes de los tres departamentos
-def hot_prom(temperature_departament_list):
-    hot_prom=temperature_departament_list[0]
-
-    for temperature in temperature_departament_list:
+    for temperature in temperature_department_list:
         if temperature>hot_prom:
             hot_prom=temperature
-
-    return hot_prom
-
-
+return hot_prom
 
 '''''
 Solucion Laboratorio
-'''''
-
+'''
 
 santanderstemperature_list=[]
-print("please enter the temperatures of the department of santander")
+print("please enter the temperatures of department of santander")
 for i in range(0, 12):
-
-    temperature = int(input("give me the temperature of month  {}  ".format(i+1)))
-
+    temperature=int(input("give me the temperature of month {} ".format(i+1)))
 santanderstemperature_list.append(temperature)
 
 santander_prom=prom_temperature(santanderstemperature_list)
-santander_high_temperature=(santanderstemperature_list)
-print("the prom temperature of the depártment of santander is:{} ".format(santander_prom))
+santader_hig_temperature=high_temperature(santanderstemperature_list)
+print("the average temperature of department of santander is: {} ".format(santander_prom))
 print("the hot temperature was".format(santander_high_temperature))
 
-temp_high_santander=high_temperature(santanderstemperature_list)
+santander_high_temperature=high_temperature(santanderstemperature_list)
 standard_deviation_santander=(stats.pstdev(santanderstemperature_list))
-print("desviacion=",standard_deviation_santander)
+print("deviation=", standard_deviation_santander)
 
-print("-------------------------------Guajira-------------------------------")
+print("------------------------------GUAJIRA------------------------------")
 #departamento de la guajira
 
-
-guajirasstemperature_list=[]
-print("please enter the temperatures of the department of guajira")
+guajirastemperature_list=[]
+print("please enter the temperatures of department of guajira")
 for i in range(0, 12):
+    temperature=int(input ("give me the temperature of the month {} ".format (guajirastemperature_list)
 
-    temperature = int(input("give me the temperature of month  {}  ".format(i+1)))
+guajiras_prom=prom_temperature(guajirastemperature_list)
+guajiras_high_temperature=high_temperature(guajirastemperature_list)
+print("the average temperature of the department of guajira is: {} ".format(guajirastemperature_list))
+print("hot temperature was: {} ".format(guajiras_high_temperature))
 
-guajirasstemperature_list.append(temperature)
+temp_high_guajira=high_temperature(guajirastemperature_list)
+standard_deviation_guajira=(stats.pstdev(guajirastemperature_list))
+print("deviation=", standard_deviation_guajira)
 
+print("------------------------------Nariño------------------------------")
+#Departamento de nariño
 
-guajiras_prom=prom_temperature(guajirasstemperature_list)
-guajiras_high_temperature=(guajirasstemperature_list)
-print("the prom temperature of the depártment of Guajira is:{} ".format(guajirasstemperature_list))
-print("the hot temperature was".format(guajirasstemperature_list))
-
-temp_high_guajira=high_temperature(guajirasstemperature_list)
-standard_deviation_guajira=(stats.pstdev(guajirasstemperature_list))
-print("desviacion=",standard_deviation_guajira)
-
-print("-------------------------------Nariño-------------------------------")
-
-#departamento de nariño
-
-
-
-nariñosstemperature_list=[]
-print("please enter the temperatures of the department of nariño")
+nariñostemperature_list=[]
+print("please enter the temperatures of department of nariño")
 for i in range(0, 12):
+        temperature=int(input ("give me the temperature of the month {} ".format (nariñostemperature_list)
+print("the average temperature of the department of nariños is: {} ".format(nariñostemperature_list))
+print("hot temperature was: {} ".format(nariñostemperature_list))
 
-    temperature = int(input("give me the temperature of month  {}  ".format(i+1)))
+nariño_prom=prom_temperature(nariñostemperature_list)
+nariño_high_temperature=high_temperature(nariñostemperature_list)
+standard_deviation_nariño=(stats.pstdev(nariñostemperature_list))
+print("deviation=", standard_deviation_nariño)
 
-nariñosstemperature_list.append(temperature)
+print("------------------------------National------------------------------")
 
-nariño_prom=prom_temperature(nariñosstemperature_list)
-nariños_high_temperature=(nariñosstemperature_list)
-print("the prom temperature of the depártment of Guajira is:{} ".format(nariñosstemperature_list))
-print("the hot temperature was".format(nariñosstemperature_list))
+national_prom=(santander_prom+nariño_prom+guajiras_prom)/3
+national_high_temperature=(santander_high_temperature+guajiras_high_temperature+nariño_hig)
 
-temp_high_nariño=high_temperature(nariñosstemperature_list)
-standard_deviation_nariño=(stats.pstdev(nariñosstemperature_list))
-print("desviacion=",standard_deviation_nariño)
+print("the average of the highest temperature is: ", national_high_temperature)
+print("the average of national temperature is: ", national_prom)
 
-print("-------------------------------NATIONAL-------------------------------")
+highertemperature_list=[santander_prom,guajiras_prom,nariño_prom]
+
+hottest=hottest_averagae(highertemperature_list)
+print("the hottests average is: ", hottests)
+
+#temperatura mas caliente en todo el año y en que departamento y mes
+
+if santander_high_temperature>guajiras_high_temperature and santander_high_temperature>nariño_high_temperature:
+    print("the warmest temperature that ocurred troughout in the year was {} °C, was presented in the month {} in the department of santander".format(santander_high_temperature,santander_high_temperature ))
+else:
+    if guajiras_high_temperature>santander_high_temperature and guajiras_high_temperature>nariño_high_temperature:
+        print("the warmest temperature that ocurred troughout in the year was {} °C, was presented in the month {} in the department of guajira".format(guajiras_high_temperature,guajiras_high_temperature ))
+    else:
+        if nariño_high_temperature>santander_high_temperature and nariño_high_temperature>guajiras_high_temperature:
+            print("the warmest temperature that ocurred troughout in the year was {} °C, was presented in the month {} in the department of nariño".format(nariño_high_temperature,nariño_high_temperature ))
+
+#desviacion estandar
+print("------------------------------Standard Deviation------------------------------")
+
+print("standard deviation of santander=", standard_deviation_santander)
+print("standard deviation of guajira=", standard_deviation_guajira)
+print("standard deviation of nariño=", standard_deviation_nariño)
 
 
-national_prom=(santanders_prom+nariño_prom+guajiras_prom)/3
-national_high_temperature=(santanders_high_temperature+guajiras_high_temperature+nariños_high_temperature)/3
 
-print("The average of the highest temperatures is: ",national_high_temperature)
-print("the average national temperature is: ",national_average)
 
-highertemperature_list=[santanders_prom,guajiras_prom,nariño_prom]
 
-hottest=hottest_average(highertemperature_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("THANKS FOR WHATCHING MY VIDEO <3")
+
+#ATT Nicolas Muñoz :D
+
 
 print("the hottest average is: ",hottest)
 
